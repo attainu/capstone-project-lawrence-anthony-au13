@@ -19,6 +19,7 @@ const transporter = nodemailer.createTransport(sendGridTransport(options));
 router.post("/", async (req, res) => {
   try {
     const { email } = req.body;
+    
 
     if (!isEmail(email)) {
       return res.status(401).send("Invalid Email");
